@@ -28,6 +28,7 @@ import Electronics from "./Components/Electronics";
 import Miscellaneous from "./Components/Miscellaneous";
 import AddProductNew from "./Components/AddProductNew";
 import AddCategory from "./Components/AddCategory";
+import UpdateCategory from "./Components/UpdateCategory";
 
 const componentMap = {
   Clothes,
@@ -72,6 +73,7 @@ function App() {
                 <Route path="/manageProducts/allProducts" element={<AllProducts />} />
                 <Route path="/category/:name" element={<DynamicComponent />} />
                 <Route path="/manageProducts/addNewProduct" element={<AddProductNew />} />
+                <Route path="updateCategory/:categoryId" element={<UpdateCategory/>} />
               </Routes>
             </div>
           </div>

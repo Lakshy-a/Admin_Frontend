@@ -151,22 +151,22 @@ const AllProducts = () => {
             <div className="overflow-x-auto overflow-y-auto">
               <div className="mt-2 mb-2">
                 <div className="w-fit h-10 flex justify-between items-center gap-8">
-                  <div className="h-full w-72 font-semibold px-6 py-3 text-md">
+                  <div className="h-full w-72 font-semibold px-8 py-3 text-md">
                     Product
                   </div>
-                  <div className="h-full w-32 font-semibold px-6 py-3 text-md">
+                  <div className="h-full w-32 font-semibold px-6 py-3 text-md flex justify-center">
                     Product Id
                   </div>
-                  <div className="h-full w-28 font-semibold px-6 py-3 text-md">
+                  <div className="h-full w-28 font-semibold px-6 py-3 text-md flex justify-center">
                     Price
                   </div>
-                  <div className="h-full w-28 font-semibold px-6 py-3 text-md">
+                  <div className="h-full w-28 font-semibold px-6 py-3 text-md flex justify-center">
                     Category
                   </div>
                   {/* <div className="h-full w-28 font-semibold px-6 py-3 text-md">Sale</div>
                   <div className="h-full w-28 font-semibold px-6 py-3 text-md">Stock</div>*/}
-                  <div className="h-full w-28 font-semibold px-6 py-3 text-md">Status</div> 
-                  <div className="h-full w-28 font-semibold px-6 py-3 text-md">
+                  <div className="h-full w-28 font-semibold px-6 py-3 text-md flex justify-center">Status</div> 
+                  <div className="h-full w-40 font-semibold px-6 py-3 text-md flex justify-center">
                     Action
                   </div>
                 </div>
@@ -187,10 +187,10 @@ const AllProducts = () => {
                         {product.title}
                       </div>
                     </div>
-                    <div className="h-full w-32 font-semibold px-6 py-3 text-sm">
+                    <div className="h-full w-32 font-semibold px-6 py-3 text-sm flex justify-center">
                       {product.id}
                     </div>
-                    <div className="h-full w-28 font-semibold px-6 py-3 text-sm">
+                    <div className="h-full w-28 font-semibold px-6 py-3 text-sm ">
                       Rs. {product.price}
                     </div>
                     <div className="h-full w-28 font-semibold px-6 py-3 text-sm">
