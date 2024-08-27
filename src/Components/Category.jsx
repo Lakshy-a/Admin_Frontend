@@ -43,6 +43,11 @@ const Category = () => {
     }
   };
 
+  const handleCategoryClick = async (event)=>{
+    const categoryId = event.currentTarget.getAttribute("data-id");
+    console.log("I am inside the handler function", categoryId);
+  }
+
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -108,8 +113,8 @@ const Category = () => {
                     <button>+ ADD CATEGORY</button>
                   </div>
                 </div>
-                <div className="overflow-x-auto overflow-y-auto">
-                  <div className="mt-2 mb-2">
+                <div className="overflow-x-auto overflow-y-auto ">
+                  <div className="mt-2 mb-2 px-2">
                     <div className="w-fit h-10 flex justify-between items-center gap-8">
                       <div className="h-full w-60 font-semibold px-8 py-3 text-md flex justify-start">
                         Category
@@ -128,18 +133,18 @@ const Category = () => {
                       <div className="h-full w-28 font-semibold px-6 py-3 text-md flex justify-center">
                         Status
                       </div>
-                      <div className="h-full w-36 font-semibold px-6 py-3 text-md flex justify-center">
+                      <div className="h-full w-36 font-semibold px-6 py-3 text-md flex justify-end">
                         Action
                       </div>
                     </div>
                   </div>
-                  <div className="product-container flex flex-wrap px-3">
+                  <div className="product-container flex flex-wrap px-4" >
                     {categories.map((category) => (
                       <div
                         key={category._id}
-                        className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-3 py-1 hover:bg-gray-200 cursor-pointer"
-                      >
-                        <div className="h-full w-60 font-semibold px-6 text-md flex gap-4 flex justify-start">
+                        className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-4 py-1 hover:bg-gray-200 cursor-pointer"                      >
+                        <div className="h-full w-60 font-semibold px-6 text-md flex gap-6 flex justify-start" 
+                        onClick={handleCategoryClick} data-id={category._id} >
                           <img
                             src={category.image}
                             alt={category.name}
@@ -161,11 +166,11 @@ const Category = () => {
                         <div className="h-full w-28 font-semibold px-6 py-3 text-sm text-yellow-500">
                           Draft
                         </div>
-                        <div className="h-full w-40 font-semibold px-6 py-3 text-sm">
+                        <div className="h-full w-40 font-semibold px-6 py-3 text-sm flex justify-between">
                           {/* view product icon */}
-                          <span className="text-blue-400 hover:text-blue-600 material-symbols-outlined text-xl">
+                          {/* <span className="text-blue-400 hover:text-blue-600 material-symbols-outlined text-xl">
                             visibility
-                          </span>
+                          </span> */}
                           {/* edit icon */}
                           <span
                             className="text-green-400 hover:text-green-600 ml-5 material-symbols-outlined text-xl"
