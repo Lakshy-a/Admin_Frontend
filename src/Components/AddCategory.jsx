@@ -10,9 +10,9 @@ function AddCategory() {
 
   const [formData, setFormData] = useState({
     name: "",
-    description: "",
-    price: "",
-    category: "Clothes",
+    // description: "",
+    // price: "",
+    // category: "Clothes",
     imageUrl: "", // Adding imageUrl to formData
   });
 
@@ -38,15 +38,16 @@ function AddCategory() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/manageProducts/addProduct",
+        "http://localhost:3000/categories/addCategory",
         formData
       );
       console.log("Response:", response.data);
-      alert("Product added successfully");
-      navigate("/manageProducts/allProducts");
+      alert("Category added successfully");
+      navigate("/category");
     } catch (error) {
       console.error(
         "Error adding product:",
@@ -164,14 +165,14 @@ function AddCategory() {
                       Category Image{" "}
                       <span className="text-red-600 text-md">*</span>
                     </div>
-                    <div className="h-fit w-full flex flex-col items-center justify-center">
-                      <div className="w-full mt-4">
+                    <div className="h-fit w-full flex flex-col items-start justify-center">
+                      <div className="w-fit mt-4">
                         <label className="h-48 w-full rounded-2xl border border-blue-600 border-dashed cursor-pointer flex flex-col justify-center items-center">
                           {selectedImage ? (
                             <img
                               src={selectedImage}
                               alt="Selected"
-                              className="h-full w-full object-cover rounded-2xl"
+                              className="h-full w-fit object-fill rounded-2xl"
                             />
                           ) : (
                             <>
