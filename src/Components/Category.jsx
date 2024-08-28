@@ -46,6 +46,7 @@ const Category = () => {
   const handleCategoryClick = async (event)=>{
     const categoryId = event.currentTarget.getAttribute("data-id");
     console.log("I am inside the handler function", categoryId);
+    navigate(`/categories/categoryId/${categoryId}`)
   }
 
   const [categories, setCategories] = useState([]);

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // src/components/Dashboard.js
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
