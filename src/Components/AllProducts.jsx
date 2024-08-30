@@ -31,7 +31,7 @@ const AllProducts = () => {
           },
         }
       );
-      console.log(res.data);
+      // console.log(res.data);
       return res.data;
     } catch (err) {
       console.error(err);
@@ -41,7 +41,7 @@ const AllProducts = () => {
   const deleteProduct = async (productId) => {
     try {
       const response = await axios.delete(`http://localhost:3000/manageProducts/removeProduct/${productId}`);
-      console.log("Product deleted:", response.data);
+      // console.log("Product deleted:", response.data);
   
       // Optionally, update the frontend to remove the deleted product from the list
       setProducts((prevProducts) => prevProducts.filter(product => product._id !== productId));
@@ -80,14 +80,14 @@ const AllProducts = () => {
 
   const handleEditProduct = (event) => {
     const productId = event.currentTarget.getAttribute("data-id");
-    console.log("Updating product with ID:", productId);
+    // console.log("Updating product with ID:", productId);
     
     updateProduct(productId);
   }
 
   const handleDeleteClick = (event) => {
     const productId = event.currentTarget.getAttribute("data-id");
-    console.log("Deleting product with ID:", productId);
+    // console.log("Deleting product with ID:", productId);
     
     // Call a function to delete the product
     deleteProduct(productId);
@@ -194,7 +194,7 @@ const AllProducts = () => {
                       Rs. {product.price}
                     </div>
                     <div className="h-full w-28 font-semibold px-6 py-3 text-sm">
-                      {product.category.name}
+                      {product.category.categoryName}
                     </div>
                     <div className="h-full w-28 font-semibold px-6 py-3 text-sm text-yellow-500">Draft</div> 
                     <div className="h-full w-40 font-semibold px-6 py-3 text-sm">

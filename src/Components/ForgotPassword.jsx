@@ -19,7 +19,7 @@ function ForgotPassword() {
 
   // On form submission
   const onSubmit = (values) => {
-    console.log("Form data", values);
+    // console.log("Form data", values);
   };
 
   return (

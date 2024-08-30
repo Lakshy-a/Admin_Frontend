@@ -44,7 +44,7 @@ function Signup() {
         role: values.role,
       });
       navigate("/login");
-      console.log(response);
+      // console.log(response);
     } catch (error) {
       console.log(error);
     }

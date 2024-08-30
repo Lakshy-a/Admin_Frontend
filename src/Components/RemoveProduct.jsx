@@ -20,13 +20,13 @@ function RemoveProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData);
+    // console.log("Submitting form data:", formData);
 
     try {
       const response = await axios.delete(
         `http://localhost:3000/manageProducts/removeProduct/${formData.productId}`
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       alert("Product removed successfully");
       navigate("/catalog");
     } catch (error) {

@@ -39,8 +39,8 @@ function Login() {
         role: values.role,
       });
       alert("Logged In");
-      console.log(response);
-      console.log(values);
+      // console.log(response);
+      // console.log(values);
 
       // Store access token in local storage
       localStorage.setItem("accessToken", response.data.token);

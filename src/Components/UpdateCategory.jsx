@@ -32,7 +32,7 @@ function UpdateCategory() {
         const base64String = reader.result;
         setSelectedImage(base64String);
         setFormData({ ...formData, imageUrl: base64String });
-        console.log(base64String);
+        // console.log(base64String);
       };
       reader.readAsDataURL(file);
     }
@@ -40,14 +40,14 @@ function UpdateCategory() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData);
+    // console.log("Submitting form data:", formData);
 
     try {
       const response = await axios.put(
         `http://localhost:3000/categories/updateCategory/${categoryId}`,
         formData
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       alert("Category updated successfully");
       navigate("/category");
     } catch (error) {
@@ -63,10 +63,10 @@ function UpdateCategory() {
     // Fetch product details from backend using the productId
     const fetchProduct = async () => {
       try {
-        console.log(categoryId);
+        // console.log(categoryId);
         const response = await axios.get(`http://localhost:3000/categories/getCategory/${categoryId}`);
         const product = response.data;
-        console.log(product);
+        // console.log(product);
 
         setFormData({
           name: product.name || "",

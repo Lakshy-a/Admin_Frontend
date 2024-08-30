@@ -4,6 +4,11 @@ import admin from "../assets/admin.png";
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   useEffect(() => {
     console.log("Dark mode:", isDarkMode);
@@ -40,7 +45,10 @@ const Header = () => {
           {isDarkMode ? "light_mode" : "dark_mode"}
         </span>
 
-        <span className="material-symbols-outlined cursor-pointer dark:text-white">
+        <span
+          className="material-symbols-outlined cursor-pointer dark:text-white"
+          onClick={toggleDropdown}
+        >
           notifications_active
         </span>
 

@@ -26,7 +26,7 @@ const Category = () => {
 
   const handleEditCategory = (event) => {
     const categoryId = event.currentTarget.getAttribute("data-id");
-    console.log("Updating category with ID:", categoryId);
+    // console.log("Updating category with ID:", categoryId);
     
     updateCategory(categoryId);
   }
@@ -45,7 +45,7 @@ const Category = () => {
 
   const handleCategoryClick = async (event)=>{
     const categoryId = event.currentTarget.getAttribute("data-id");
-    console.log("I am inside the handler function", categoryId);
+    // console.log("I am inside the handler function", categoryId);
     navigate(`/categories/categoryId/${categoryId}`)
   }
 

@@ -16,21 +16,21 @@ const Sidebar = () => {
 
   return (
     // the main div
-    <div className="w-64 h-screen text-black">
+    <div className="w-64 h-screen text-black fixed">
       {/* logo */}
       <div className="flex justify-between items-center">
         <img className="w-48" src={logo} />
       </div>
 
       {/* sidebar menu */}
-      <ul className="px-3 py-5">
+      <ul className="px-1 py-5">
         {/* dashboard */}
-        <div className="flex">
-          <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
+        <div className="flex hover:text-blue-600  ml-4">
+          <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl">
             grid_view
           </span>
           <div className="w-4/5 flex justify-between items-center">
-            <li className="py-4 text-lg">
+            <li className="py-4 text-md">
               <Link to="/dashboard">Dashboard</Link>
             </li>
             <span className="material-symbols-outlined cursor-pointer">
@@ -40,17 +40,17 @@ const Sidebar = () => {
         </div>
 
         {/* manage products */}
-        <div className="flex flex-col">
-          <div className="flex">
+        <div className="flex flex-col ml-4">
+          <div className="flex hover:text-blue-600">
             <span
-              className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined cursor-pointer"
+              className="w-fit flex justify-end items-center mx-2 material-symbols-outlined cursor-pointer text-xl"
               onClick={() => toggleDropdown("manageProducts")}
             >
               database
             </span>
             <div className="w-4/5 flex justify-between items-center cursor-pointer">
               <li
-                className="py-4 text-lg"
+                className="py-4 text-md"
                 onClick={() => toggleDropdown("manageProducts")}
               >
                 Manage Products
@@ -64,12 +64,12 @@ const Sidebar = () => {
             </div>
           </div>
           {dropdowns.manageProducts && (
-            <div className="mt-2 bg-white border border-gray-300 rounded shadow-lg">
+            <div className="mt-2 bg-white border-2 rounded shadow-lg">
               <ul className="py-2">
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 ">
                   <Link to="/manageProducts/addNewProduct">Add Product</Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 ">
                   <Link to="/manageProducts/allProducts">Product List</Link>
                 </li>
               </ul>
@@ -78,14 +78,14 @@ const Sidebar = () => {
         </div>
 
         {/* ecommerce */}
-        <div className="flex flex-col">
+        <div className="flex flex-col hover:text-blue-600  ml-4">
           <div className="flex flex-col">
             <div className="flex w-full">
-              <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
+              <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl">
                 shopping_cart
               </span>
               <div className="w-4/5 flex justify-between items-center">
-                <li className="py-4 text-lg">
+                <li className="py-4 text-md">
                   <Link to="/ecommerce">Ecommerce</Link>
                 </li>
                 <span
@@ -101,14 +101,14 @@ const Sidebar = () => {
         </div>
 
         {/* category */}
-        <div className="flex flex-col cursor-pointer">
-          <div className="flex">
-            <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined"
+        <div className="flex flex-col cursor-pointer  ml-4">
+          <div className="flex hover:text-blue-600">
+            <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl"
             onClick={() => toggleDropdown("category")}>
               category
             </span>
             <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-lg"  onClick={() => toggleDropdown("category")}>
+              <li className="py-4 text-md"  onClick={() => toggleDropdown("category")}>
                 {/* <Link to="/category">Categories</Link> */}
                 Category
               </li>
@@ -123,10 +123,10 @@ const Sidebar = () => {
           {dropdowns.category && (
             <div className="mt-2 bg-white border border-gray-300 rounded shadow-lg">
               <ul className="py-2">
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 hover:text-blue-600">
                   <Link to="/category">Category List</Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-200">
+                <li className="px-4 py-2 hover:text-blue-600">
                   <Link to="/addCategory">Add Caregory</Link>
                 </li>
               </ul>
@@ -135,13 +135,13 @@ const Sidebar = () => {
         </div>
 
         {/* orders */}
-        <div className="flex flex-col">
+        <div className="flex flex-col hover:text-blue-600  ml-4">
           <div className="flex">
-            <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
+            <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl">
               orders
             </span>
             <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-lg">
+              <li className="py-4 text-md">
                 <Link to="/order">Orders</Link>
               </li>
               <span
@@ -155,13 +155,13 @@ const Sidebar = () => {
         </div>
 
         {/* users */}
-        <div className="flex flex-col">
+        <div className="flex flex-col hover:text-blue-600  ml-4">
           <div className="flex">
-            <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
+            <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl">
               person
             </span>
             <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-lg">
+              <li className="py-4 text-md">
                 <Link to="/user">Users</Link>
               </li>
               <span
@@ -175,13 +175,13 @@ const Sidebar = () => {
         </div>
 
         {/* roles */}
-        <div className="flex flex-col">
+        <div className="flex flex-col hover:text-blue-600 ml-4">
           <div className="flex">
-            <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
+            <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl ">
               person_add
             </span>
             <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-lg">
+              <li className="py-4 text-md">
                 <Link to="/roles">Roles</Link>
               </li>
               <span

@@ -8,7 +8,7 @@ function Shoes() {
     const fetchShoes = async () => {
         try {
             const res = await axios.get("http://localhost:3000/categories/shoes");
-            console.log(res);
+            // console.log(res);
             return res.data;
         } catch (error) {
             console.log(error);

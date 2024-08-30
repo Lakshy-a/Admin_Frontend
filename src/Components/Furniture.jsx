@@ -10,7 +10,7 @@ function Furniture() {
           const res = await axios.get(
             "http://localhost:3000/categories/furniture"
           );
-          console.log(res);
+          // console.log(res);
           return res.data;
         } catch (error) {
           console.log(error);

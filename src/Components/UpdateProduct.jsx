@@ -31,7 +31,7 @@ function AddProductNew() {
         const base64String = reader.result;
         setSelectedImage(base64String);
         setFormData({ ...formData, imageUrl: base64String });
-        console.log(base64String);
+        // console.log(base64String);
       };
       reader.readAsDataURL(file);
     }
@@ -41,10 +41,10 @@ function AddProductNew() {
     // Fetch product details from backend using the productId
     const fetchProduct = async () => {
       try {
-        console.log(id);
+        // console.log(id);
         const response = await axios.get(`http://localhost:3000/manageProducts/getProduct/${id}`);
         const product = response.data;
-        console.log(product);
+        // console.log(product);
 
         setFormData({
           name: product.title || "",
@@ -67,14 +67,14 @@ function AddProductNew() {
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData);
+    // console.log("Submitting form data:", formData);
 
     try {
       const response = await axios.put(
         `http://localhost:3000/manageProducts/updateProduct/${id}`,
         formData
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       alert("Product updated successfully");
       navigate("/manageProducts/allProducts");
     } catch (error) {

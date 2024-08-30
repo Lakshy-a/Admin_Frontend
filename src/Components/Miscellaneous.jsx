@@ -10,7 +10,7 @@ function Miscellaneous() {
       const res = await axios.get(
         "http://localhost:3000/categories/miscellaneous"
       );
-      console.log(res);
+      // console.log(res);
       return res.data;
     } catch (error) {
       console.log(error);

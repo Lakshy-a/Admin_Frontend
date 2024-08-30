@@ -30,7 +30,7 @@ function AddProductNew() {
         const base64String = reader.result;
         setSelectedImage(base64String);
         setFormData({ ...formData, imageUrl: base64String });
-        console.log(base64String)
+        // console.log(base64String)
       };
       reader.readAsDataURL(file);
     }
@@ -44,7 +44,7 @@ function AddProductNew() {
         "http://localhost:3000/manageProducts/addProduct",
         formData
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       alert("Product added successfully");
       navigate("/manageProducts/allProducts");
     } catch (error) {

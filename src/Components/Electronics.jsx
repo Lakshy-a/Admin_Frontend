@@ -10,7 +10,7 @@ function Electronics() {
           const res = await axios.get(
             "http://localhost:3000/categories/electronics"
           );
-          console.log(res);
+          // console.log(res);
           return res.data;
         } catch (error) {
           console.log(error);

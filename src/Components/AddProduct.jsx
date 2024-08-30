@@ -24,14 +24,14 @@ function AddProduct() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting form data:", formData);
+    // console.log("Submitting form data:", formData);
 
     try {
       const response = await axios.post(
         "http://localhost:3000/manageProducts/addProduct",
         formData
       );
-      console.log("Response:", response.data);
+      // console.log("Response:", response.data);
       alert("Product added successfully");
     } catch (error) {
       console.error(

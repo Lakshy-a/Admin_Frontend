@@ -7,20 +7,45 @@ import axios from "axios";
 
 function DynamicCategory() {
   const { categoryId } = useParams(); // Destructure categoryId from useParams
+  // console.log(categoryId);
 
   useEffect(() => {
+    var categoryName;
+
     const fetchCorrespondingCategory = async () => {
       try {
         const response = await axios.get(
           `http://localhost:3000/categories/categoryId/${categoryId}`
         );
-        console.log(response.data.name); // Log the actual data received from the API
+        // console.log(response.data.name); // Log the actual data received from the API
+        categoryName = response.data;
+
+        console.log("Hello Category: ", categoryName);
       } catch (error) {
         console.error("Error fetching category:", error);
       }
     };
 
-    fetchCorrespondingCategory();
+    const fetchProductsWithCorrespondingCategory = async () => {
+      await console.log("Inside Category:",categoryName);
+      
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/categories/categoryName/${categoryName}`
+        )
+
+        console.log(response);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    const runFunctionsInSequence = async () => {
+      await fetchCorrespondingCategory(); // Run the first function
+      await fetchProductsWithCorrespondingCategory(); // Then run the second function
+    };
+
+    runFunctionsInSequence();
   }, [categoryId]); // Add categoryId as a dependency
 
   return (
