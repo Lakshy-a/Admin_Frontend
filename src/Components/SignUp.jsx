@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -43,8 +43,13 @@ function Signup() {
         password: values.password,
         role: values.role,
       });
-      navigate("/login");
-      // console.log(response);
+      if (response.status == 201) {
+        alert("Username Laredy Exists");
+        navigate("/signup");
+      } else{
+        alert("User created successfully");
+        navigate("/login");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -105,7 +110,11 @@ function Signup() {
                 />
               </div>
               <div>
-                <Field as="select" name="role" className="w-80 h-10 rounded-lg border-2 border-gray-300 mt-4 pl-2">
+                <Field
+                  as="select"
+                  name="role"
+                  className="w-80 h-10 rounded-lg border-2 border-gray-300 mt-4 pl-2"
+                >
                   <option value="user">User</option>
                   <option value="admin">Admin</option>
                 </Field>
@@ -116,7 +125,11 @@ function Signup() {
                 />
               </div>
               <div className="flex justify-center items-center w-80 text-white font-medium h-10 bg-blue-500 hover:bg-blue-900 rounded-lg mt-7">
-                <button type="submit" className="w-full h-full" disabled={isSubmitting}>
+                <button
+                  type="submit"
+                  className="w-full h-full"
+                  disabled={isSubmitting}
+                >
                   Sign Up
                 </button>
               </div>

@@ -57,12 +57,13 @@ function Login() {
   };
 
   return (
-    <div className="mainContainer flex justify-center items-center w-screen h-screen bg-[#3281FD]">
-      <div className="loginContainer flex flex-col items-center w-96 h-auto bg-white rounded-lg pb-3">
+    <div className="mainContainer flex justify-center items-center w-screen h-full bg-[#b0b4b8] ">
+      <div className="loginContainer flex flex-col items-center w-96 h-auto bg-white rounded-lg pb-3 mt-12 mb-12">
         <div className="flex justify-center items-center">
           <img className="h-24 w-72" src={logo} alt="Logo" />
-        </div>
-        <div className="font-bold text-2xl my-1">Log In to Your Account</div>
+          </div>
+          <div className="font-bold text-2xl my-1">Log In to Your Account</div>
+          <div className="font-light text-sm ">Enter your email & password to login</div>
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -75,7 +76,7 @@ function Login() {
                   type="email"
                   name="email"
                   placeholder="Email..."
-                  className="w-80 h-10 rounded-lg border-2 border-gray-300 p-3 my-4"
+                  className="w-80 h-10 rounded-lg border border-gray-300 p-3 my-4"
                 />
                 <ErrorMessage
                   name="email"
@@ -88,7 +89,7 @@ function Login() {
                   type="password"
                   name="password"
                   placeholder="Password..."
-                  className="w-80 h-10 rounded-lg border-2 border-gray-300 p-3"
+                  className="w-80 h-10 rounded-lg border border-gray-300 p-3"
                 />
                 <ErrorMessage
                   name="password"
@@ -100,7 +101,7 @@ function Login() {
                 <Field
                   as="select"
                   name="role"
-                  className="w-80 h-10 rounded-lg border-2 border-gray-300 pl-2 my-4"
+                  className="w-80 h-10 rounded-lg border border-gray-300 pl-2 my-4"
                 >
                   <option value="user">User</option>
                   <option value="admin">Admin</option>
@@ -111,15 +112,19 @@ function Login() {
                   className="text-red-600"
                 />
               </div>
-              <div className="flex justify-end w-80">
+              <div className="flex justify-between w-80">
+                <div className="flex gap-2">
+                  <input type="checkbox" className="check"></input>
+                  <label htmlFor="check" className="font-light text-sm">Keep me signed in</label>
+                </div>
                 <Link
                   to="/forgot-password"
                   className="text-sm text-[#3281FD] hover:text-red-400 cursor-pointer"
                 >
-                  Forgot Password
+                  Forgot Password?
                 </Link>
               </div>
-              <div className="flex justify-center items-center w-80 text-white font-medium h-10 bg-blue-500 hover:bg-blue-900 rounded-lg mt-4">
+              <div className="flex justify-center items-center w-80 text-white font-medium h-10 bg-blue-500 hover:bg-white hover:border hover:border-blue-500 hover:text-blue-500 rounded-lg mt-4">
                 <button
                   type="submit"
                   className="w-full h-full"
@@ -131,11 +136,22 @@ function Login() {
             </Form>
           )}
         </Formik>
-        <div className="flex justify-center items-center w-80 mt-2 ">
-          <div className="text-sm cursor-pointer font-medium text-black">
-            Don't have an account?{" "}
-            <Link to="/signup" className="text-black hover:text-red-500">
-              Sign Up
+        <div className="text-xs mt-8 font-light">Or continue with social account</div>
+        <div className="flex gap-4 w-5/6 h-10 mt-6 ">
+          <div className="w-1/2 rounded-lg flex items-center px-2 gap-2 hover:bg-blue-500 cursor-pointer hover:text-white border">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt541BCjsjuA1Q6kRY7OorKEd26JbPtPY5BHrFWIkpvUs0ualX0DFl5GvKcLbDxdGKMdM&usqp=CAU" className="w-7 h-7"></img>
+            <div className="text-sm font-semibold ">Sign in with Google</div>
+          </div>
+          <div className="w-1/2 rounded-lg flex items-center hover:bg-blue-500 cursor-pointer hover:text-white border">
+            <img src="https://1000logos.net/wp-content/uploads/2017/02/Facebook-Logosu.png" className="w-16 h-7"></img>
+            <div className="text-sm font-semibold ">Sign in with Facebook</div>
+          </div>
+        </div>
+        <div className="flex justify-center items-center w-80 mt-12 ">
+          <div className="text-sm font-light cursor-pointer  text-black">
+          You don't have an account yet?{" "}
+            <Link to="/signup" className="text-blue-500 hover:text-red-500">
+              Register Now
             </Link>
           </div>
         </div>

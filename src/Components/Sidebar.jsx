@@ -18,8 +18,8 @@ const Sidebar = () => {
     // the main div
     <div className="w-64 h-screen text-black fixed">
       {/* logo */}
-      <div className="flex justify-between items-center">
-        <img className="w-48" src={logo} />
+      <div className="flex justify-between items-center px-3">
+        <img className="w-40" src={logo} />
       </div>
 
       {/* sidebar menu */}
