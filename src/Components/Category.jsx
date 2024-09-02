@@ -74,7 +74,7 @@ const Category = () => {
       const countOfProducts = async () => {
         const getCounts = await fetchCount();
         setCounts(getCounts);
-        console.log("Hello", counts);
+        console.log("Hello", getCounts);
       };
 
       countOfProducts();
