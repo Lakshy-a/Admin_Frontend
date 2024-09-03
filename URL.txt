@@ -9,3 +9,6 @@ fake data - https://app.beeceptor.com/mock-server/fake-store-api
 
 https://themeforest.net/item/remos-ecommerce-admin-dashboard-figma-templat/screenshots/49673102?index=1
 
+
+Loan Website: https://preview.themeforest.net/item/payday-loans-banking-loan-business-finance-wordpress-theme/full_screen_preview/17489285?_ga=2.157534073.254945490.1725255446-1797665062.1721637294
+

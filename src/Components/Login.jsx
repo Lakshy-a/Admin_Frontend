@@ -57,7 +57,7 @@ function Login() {
   };
 
   return (
-    <div className="mainContainer flex justify-center items-center w-screen h-full bg-[#b0b4b8] ">
+    <div className="mainContainer flex justify-center items-center w-screen h-full bg-[#e5e9ec] ">
       <div className="loginContainer flex flex-col items-center w-96 h-auto bg-white rounded-lg pb-3 mt-12 mb-12">
         <div className="flex justify-center items-center">
           <img className="h-24 w-72" src={logo} alt="Logo" />
