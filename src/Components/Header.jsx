@@ -110,7 +110,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white shadow-md py-2 px-6 flex justify-between items-center">
+      <header className="bg-white shadow-md border py-6 px-6 flex justify-between items-center">
         <div className="flex justify-between items-center border-2 border-gray-200 rounded-md px-4 w-2/5">
           <input
             type="text"
@@ -125,7 +125,7 @@ const Header = () => {
         <div className="flex gap-12 justify-end w-2/5	px-4">
           <div ref={languageRef} className="relative">
             <div
-              className="bg-gray-300 px-3 h-full rounded-full flex justify-center items-center cursor-pointer"
+              className="bg-blue-200 hover:bg-white px-3 h-full rounded-full flex justify-center items-center cursor-pointer"
               onClick={toggleLanguage}
             >
               <span
@@ -149,7 +149,7 @@ const Header = () => {
             {isLanguageOpen && (
               <div className="absolute mt-3 bg-white border border-gray-300 rounded-lg shadow-lg z-10 w-32">
                 <ul className="w-full px-2 py-2">
-                  <div className="flex items-center hover:bg-gray-200 w-full">
+                  <div className="flex items-center hover:bg-blue-100 w-full rounded-xl px-2">
                     <img
                       src="https://uxwing.com/wp-content/themes/uxwing/download/flags-landmarks/india-flag-icon.png"
                       className="h-5 w-5 rounded-full"
@@ -158,7 +158,7 @@ const Header = () => {
                       IND
                     </div>
                   </div>
-                  <div className="flex items-center hover:bg-gray-200 w-full">
+                  <div className="flex items-center hover:bg-blue-100 w-full rounded-xl px-2">
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrVlNYPlmj31ijPxDyQ8uIrE6SbQooyO4Qaw&s"
                       className="h-5 w-5 rounded-full"
@@ -167,7 +167,7 @@ const Header = () => {
                       VIE
                     </div>
                   </div>
-                  <div className="flex items-center hover:bg-gray-200 w-full">
+                  <div className="flex items-center hover:bg-blue-100 w-full rounded-xl px-2">
                     <img
                       src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARIAAAC4CAMAAAAYGZMtAAAAKlBMVEXVKx7///8AOKUAOaQAOKpLNIjbKwzp6ekALKOXos7V1dXt7eqLlsMALqQITy+EAAABHUlEQVR4nO3QyQ0CQRDAwOZczvzT5b3jAECiKgLL89jYecx2YGezZGVJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUls8/x2wq95zuvOzmveN3bec2RhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJWFJWBKWhCVhSVgSloQlYUlYEpaEJTEnFnNmMRcWc2UxAAAAAAAAAAAAAAAAAAAAwF/6AKTP6h9+/o8KAAAAAElFTkSuQmCC"
                       className="h-5 w-5 rounded-full"
@@ -176,7 +176,7 @@ const Header = () => {
                       RUS
                     </div>
                   </div>
-                  <div className="flex items-center hover:bg-gray-200 w-full">
+                  <div className="flex items-center hover:bg-blue-100 w-full rounded-xl px-2">
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGRjoLrcXQ7RDMlSbVnYiXiD6kriadj5GezQ&s"
                       className="h-5 w-5 rounded-full"
@@ -185,7 +185,7 @@ const Header = () => {
                       CHI
                     </div>
                   </div>
-                  <div className="flex items-center hover:bg-gray-200 w-full">
+                  <div className="flex items-center hover:bg-blue-100 w-full rounded-xl px-2">
                     <img
                       src="https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_1280.jpg"
                       className="h-5 w-5 rounded-full"
@@ -203,7 +203,7 @@ const Header = () => {
             className="relative cursor-pointer"
             onClick={toggleChat}
           >
-            <div className="bg-gray-300 px-3 rounded-full flex justify-center items-center h-full">
+            <div className="bg-blue-200 hover:bg-white px-3 rounded-full flex justify-center items-center h-full">
               <span className="material-symbols-outlined cursor-pointer text-xl">
                 notifications_active
               </span>
@@ -229,7 +229,7 @@ const Header = () => {
           )}
 
           <div
-            className="bg-gray-300 relative px-5 py-2 rounded-full w-8 flex justify-center items-center h-full cursor-pointer"
+            className="bg-blue-200 hover:bg-white relative px-5 py-2 rounded-full w-8 flex justify-center items-center h-full cursor-pointer"
             onClick={toggleChatBubble}
           >
             <span className="material-symbols-outlined cursor-pointer text-xl">
@@ -257,7 +257,7 @@ const Header = () => {
          
 
           <div
-            className="bg-gray-300 px-3 rounded-full flex justify-center items-center cursor-pointer"
+            className="bg-blue-200 hover:bg-white px-3 rounded-full flex justify-center items-center cursor-pointer"
             onClick={toggleOtherApps}
           >
             <span className="material-symbols-outlined cursor-pointer text-xl">

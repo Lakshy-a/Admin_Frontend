@@ -93,6 +93,11 @@ const AllProducts = () => {
     deleteProduct(productId);
   };
 
+  const openProductPage = (event)=>{
+    const productId = event.currentTarget.getAttribute("data-id");
+    navigate(`/selectedProduct/${productId}`);
+  }
+
   return (
     <div className="app-container h-screen w-screen flex overflow-x-auto">
       {/* sidebar */}
@@ -175,9 +180,9 @@ const AllProducts = () => {
                 {products.map((product) => (
                   <div
                     key={product._id}
-                    className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-3 py-1 hover:bg-gray-200 cursor-pointer"
+                    className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-3 py-1 hover:bg-gray-200 cursor-pointer" 
                   >
-                    <div className="h-full w-72 font-semibold px-6 text-md flex gap-4">
+                    <div className="h-full w-72 font-semibold px-6 text-md flex gap-4" onClick={openProductPage} data-id={product._id}>
                       <img
                         src={product.productImage}
                         alt={product.title}

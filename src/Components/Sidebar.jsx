@@ -121,13 +121,13 @@ const Sidebar = () => {
             </div>
           </div>
           {dropdowns.category && (
-            <div className="mt-2 bg-white border border-gray-300 rounded shadow-lg">
-              <ul className="py-2">
-                <li className="px-4 py-2 hover:text-blue-600">
-                  <Link to="/category">Category List</Link>
+            <div className="bg-white  border-gray-300 rounded ">
+              <ul className=" overflow-hidden">
+                <li className="px-9 py-1 hover:text-blue-600 hover:bg-blue-100 text-sm">
+                  <Link to="/category"> Category List</Link>
                 </li>
-                <li className="px-4 py-2 hover:text-blue-600">
-                  <Link to="/addCategory">Add Caregory</Link>
+                <li className="px-9 py-1 hover:text-blue-600 hover:bg-blue-100 text-sm">
+                  <Link to="/addCategory">New Category</Link>
                 </li>
               </ul>
             </div>

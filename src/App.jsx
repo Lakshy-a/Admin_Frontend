@@ -30,6 +30,7 @@ import AddProductNew from "./Components/AddProductNew";
 import AddCategory from "./Components/AddCategory";
 import UpdateCategory from "./Components/UpdateCategory";
 import DynamicCategory from "./Components/DynamicCategory";
+import SelectedProducts from "./Components/SelectedProducts";
 
 const componentMap = {
   Clothes,
@@ -76,6 +77,7 @@ function App() {
                 <Route path="/updateCategory/:categoryId" element={<UpdateCategory/>} />
                 <Route path="/category/categoryName/:name" element={<DynamicComponent />} />
                 <Route path="/categories/categoryId/:categoryId" element={<DynamicCategory/>} />
+                <Route path="/selectedProduct/:productId" element={<SelectedProducts/>}/>
               </Routes>
             </div>
           </div>
