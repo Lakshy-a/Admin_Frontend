@@ -4,7 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import { useNavigate } from 'react-router-dom';
 
-function ManageProducts() {
+function ManageProducts({toggleDarkMode, darkMode}) {
     const navigate = useNavigate();
 
     const handleAddProduct = () => {
@@ -23,11 +23,12 @@ function ManageProducts() {
     <div>
       <div className="app-container h-screen w-screen flex">
         <div className="sidebar h-full w-1/5">
-          <Sidebar />
+          <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
         </div>
         <div className="headerBar h-24 w-4/5 ">
           <div>
-            <Header />
+           <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
           </div>
           <div className='w-full h-full flex justify-center items-center'>
             {/* <div className='w-3/5 h-3/5 flex justify-center items-center gap-8'>

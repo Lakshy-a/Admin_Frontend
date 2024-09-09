@@ -4,7 +4,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 import axios from "axios";
 
-const User = () => {
+const User = ({toggleDarkMode, darkMode}) => {
   const fetchUsers = async () => {
     try {
       const res = await axios.get(
@@ -30,12 +30,13 @@ const User = () => {
   return (
     <div className="app-container h-screen w-screen flex">
       <div className="sidebar h-full w-1/5">
-        <Sidebar />
+        <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
       </div>
-      <div className="headerBar h-24 w-4/5">
-        <Header />
-        <div className="product-container flex flex-wrap">
+      <div className="headerBar h-full w-4/5">
+       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
 
+        <div className={`product-container flex h-full flex-wrap ${!darkMode ? 'bg-white text-white' : 'bg-[#1E293B] text-gray-500'}`}>
+    
           {users.map((user) => (
             <div key={user._id} className="product box-border	w-1/4 p-2">
               <h1 className="text-lg font-bold	">Name: {user.username}</h1>

@@ -1,7 +1,4 @@
-/* eslint-disable no-unused-vars */
-// src/App.js
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import Sidebar from "./Components/Sidebar";
 import Header from "./Components/Header";
@@ -48,11 +45,25 @@ const DynamicComponent = () => {
 };
 
 function App() {
+  // Load darkMode preference from localStorage when the app starts
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+  });
+
+  // Save darkMode preference to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  }
+
   return (
     <>
-    
       <BrowserRouter>
-        <div className="app-container">
+        <div className={`app-container ${darkMode ? 'dark' : ''}`}>
           <div className="main-content">
             <div className="content">
               <Routes>
@@ -60,24 +71,24 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
-                <Route path="/home/*" element={<Home />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/manageProducts" element={<ManageProducts />} />
-                <Route path="/ecommerce" element={<Ecommerce />} />
-                <Route path="/category" element={<Category />} />
-                <Route path="/addCategory" element={<AddCategory/>} />
-                <Route path="/order" element={<Order />} />
-                <Route path="/user" element={<User />} />
-                <Route path="/roles" element={<Roles />} />
-                <Route path="/manageProducts/addproduct" element={<AddProduct />} />
-                <Route path="/manageProducts/removeProduct" element={<RemoveProduct />} />
-                <Route path="/manageProducts/updateproduct/:id" element={<UpdateProduct />} />
-                <Route path="/manageProducts/allProducts" element={<AllProducts />} />
-                <Route path="/manageProducts/addNewProduct" element={<AddProductNew />} />
-                <Route path="/updateCategory/:categoryId" element={<UpdateCategory/>} />
-                <Route path="/category/categoryName/:name" element={<DynamicComponent />} />
-                <Route path="/categories/categoryId/:categoryId" element={<DynamicCategory/>} />
-                <Route path="/selectedProduct/:productId" element={<SelectedProducts/>}/>
+                <Route path="/home/*" element={<Home toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/dashboard" element={<Dashboard toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts" element={<ManageProducts toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/ecommerce" element={<Ecommerce toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/category" element={<Category toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/addCategory" element={<AddCategory toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/order" element={<Order toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/user" element={<User toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/roles" element={<Roles toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts/addproduct" element={<AddProduct toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts/removeProduct" element={<RemoveProduct toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts/updateproduct/:id" element={<UpdateProduct toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts/allProducts" element={<AllProducts toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/manageProducts/addNewProduct" element={<AddProductNew toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/updateCategory/:categoryId" element={<UpdateCategory toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/category/categoryName/:name" element={<DynamicComponent toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/categories/categoryId/:categoryId" element={<DynamicCategory toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
+                <Route path="/selectedProduct/:productId" element={<SelectedProducts toggleDarkMode={toggleDarkMode} darkMode={darkMode} />} />
               </Routes>
             </div>
           </div>

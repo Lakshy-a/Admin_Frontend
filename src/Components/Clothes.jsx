@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import axios from "axios";
 
-function Clothes() {
+function Clothes({toggleDarkMode, darkMode}) {
   const fetchClothes = async () => {
     try {
       const res = await axios.get("http://localhost:3000/categories/clothes");
@@ -31,11 +31,12 @@ function Clothes() {
       <div>
         <div className="app-container h-screen w-screen flex overflow-x-auto">
           <div className="sidebar h-full w-1/5">
-            <Sidebar />
+            <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
           </div>
           <div className="headerBar h-24 w-4/5 ">
             <div>
-              <Header />
+             <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
             </div>
             <div className="mt-4 mb-4 w-full text-center text-3xl font-semibold underline decoration-dotted">
               Products in Colthes Category

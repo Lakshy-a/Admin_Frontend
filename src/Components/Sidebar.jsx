@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import darkLogo from "../assets/logo-removebg-preview.png"
 import openMenu from "../assets/menuOpen.png";
+import { FiFacebook } from "react-icons/fi";
 
-const Sidebar = () => {
+const Sidebar = ({toggleDarkMode, darkMode}) => {
   const [dropdowns, setDropdowns] = useState({
     manageProducts: false,
   });
@@ -16,10 +18,10 @@ const Sidebar = () => {
 
   return (
     // the main div
-    <div className="w-64 h-screen text-black fixed">
+    <div className={`w-64 h-screen ${!darkMode ? 'text-black bg-white' : 'text-white bg-[#1E293B]'}  overflow-y-auto	scrollbar-hide static`}>
       {/* logo */}
       <div className="flex justify-between items-center px-3">
-        <img className="w-40" src={logo} />
+        <img className="w-40" src={!darkMode ? logo : darkLogo} />
       </div>
 
       {/* sidebar menu */}
@@ -64,13 +66,13 @@ const Sidebar = () => {
             </div>
           </div>
           {dropdowns.manageProducts && (
-            <div className="mt-2 bg-white border-2 rounded shadow-lg">
-              <ul className="py-2">
-                <li className="px-4 py-2 ">
-                  <Link to="/manageProducts/addNewProduct">Add Product</Link>
-                </li>
-                <li className="px-4 py-2 ">
+            <div className={`${!darkMode ? 'bg-white' : 'bg-gray-800'}  border-gray-300 rounded overflow-hidden `}>
+              <ul className="overflow-hidden">
+                <li className="px-9 py-1 hover:text-blue-600 hover:bg-blue-100 text-sm ">
                   <Link to="/manageProducts/allProducts">Product List</Link>
+                </li>
+                <li className="px-9 py-1 hover:text-blue-600 hover:bg-blue-100 text-sm">
+                  <Link to="/manageProducts/addNewProduct">Add Product</Link>
                 </li>
               </ul>
             </div>
@@ -103,12 +105,17 @@ const Sidebar = () => {
         {/* category */}
         <div className="flex flex-col cursor-pointer  ml-4">
           <div className="flex hover:text-blue-600">
-            <span className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl"
-            onClick={() => toggleDropdown("category")}>
+            <span
+              className="w-fit flex justify-end items-center mx-2 material-symbols-outlined text-xl"
+              onClick={() => toggleDropdown("category")}
+            >
               category
             </span>
             <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-md"  onClick={() => toggleDropdown("category")}>
+              <li
+                className="py-4 text-md"
+                onClick={() => toggleDropdown("category")}
+              >
                 {/* <Link to="/category">Categories</Link> */}
                 Category
               </li>
@@ -121,7 +128,7 @@ const Sidebar = () => {
             </div>
           </div>
           {dropdowns.category && (
-            <div className="bg-white  border-gray-300 rounded ">
+            <div className={`${!darkMode ? 'bg-white' : 'bg-gray-800'}  border-gray-300 rounded overflow-hidden `}>
               <ul className=" overflow-hidden">
                 <li className="px-9 py-1 hover:text-blue-600 hover:bg-blue-100 text-sm">
                   <Link to="/category"> Category List</Link>
@@ -194,25 +201,42 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* all products */}
-        {/* <div className="flex flex-col">
-          <div className="flex">
-            <span className="w-1/5 flex justify-center items-center mx-2 material-symbols-outlined">
-              box
+        {/* <div className="flex flex-col ml-4 h-fit gap-6 mt-4">
+          <div className="text-lg font-light">Connect Us</div>
+          <div className="flex justify-start gap-10">
+            <span className="text-xl font-light">
+              <FiFacebook />
             </span>
-            <div className="w-4/5 flex justify-between items-center">
-              <li className="py-4 text-lg">
-                <Link to="/allProducts">All Products</Link>
-              </li>
-              <span
-                className="material-symbols-outlined cursor-pointer"
-                onClick={() => toggleDropdown("allProducts")}
-              >
-                keyboard_arrow_down
-              </span>
-            </div>
+            <span>
+              <FiFacebook />
+            </span>
+            <span>
+              <FiFacebook />
+            </span>
+            <span>
+              <FiFacebook />
+            </span>
           </div>
         </div> */}
+
+        {/* connect us */}
+        <div className="flex flex-col ml-4 h-fit mt-16 gap-8 items-center">
+          <img
+            src="https://themesflat.co/html/remos/images/menu-left/img-bot.png"
+            alt="connect_With_Us"
+            className="object-cover w-36"
+          />
+          <div className="flex flex-col items-center justify-center w-full h-fit gap-3">
+            <div className="text-xl font-bold">Hi, how can we help?</div>
+            <div className="text-center font-light">
+              Contact us if you have any assistance, we will contact you as soon
+              as possible
+            </div>
+            <button className="bg-blue-500 text-white px-6 py-2 rounded-full hover:border hover:border-blue-500 hover:text-blue-500 hover:bg-white">
+              Contact
+            </button>
+          </div>
+        </div>
       </ul>
     </div>
   );

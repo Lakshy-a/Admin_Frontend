@@ -11,20 +11,21 @@ import Category from "./Category";
 import User from "./User";
 import Roles from "./Roles";
 
-function Home() {
+function Home({toggleDarkMode, darkMode}) {
   return (
     <div>
       <div className="app-container h-screen w-screen flex">
         <div className="sidebar h-full w-1/5">
-          <Sidebar />
+          <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
         </div>
-        <div className="headerBar h-24 w-4/5 ">
+        <div className="headerBar h-full w-4/5 ">
           <div>
-            <Header />
+           <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
           </div>
-          <div className="p-4">
+          <div className={`p-4 ${!darkMode ? 'bg-white text-black ' : 'bg-[#1E293B] text-gray-500'} h-full`}>
             <Routes>
-              <Route path="/" element={<WelcomePage />} />
+              <Route path="/" element={<WelcomePage toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>} />
             </Routes>
           </div>
         </div>

@@ -6,7 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Category = () => {
+const Category = ({toggleDarkMode, darkMode}) => {
   const navigate = useNavigate();
 
   const handleAddNew = () => {
@@ -102,25 +102,26 @@ const Category = () => {
       <div>
         <div className="app-container h-screen w-screen flex overflow-x-auto">
           <div className="sidebar h-full w-1/5">
-            <Sidebar />
+            <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
           </div>
           <div className="headerBar h-24 w-4/5 ">
             <div>
-              <Header />
+             <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
             </div>
-            <div className="w-full h-fit bg-[#F2F7FB] pl-8 pr-8 pt-8 ">
+            <div className={`w-full h-fit ${!darkMode ? 'bg-[#F2F7FB]' : 'bg-[#0F172A]'} pl-8 pr-8 pt-8 `}>
               <div className="w-full h-16 ">
-                <h2 className="text-2xl font-bold">Categories List</h2>
+                <h2 className={`text-2xl font-bold ${!darkMode ? 'text-black' : 'text-white'}`}>Categories List</h2>
               </div>
-              <div className="w-full h-fit bg-white rounded-xl shadow-md pb-8 pt-4">
+              <div className={`w-full h-fit ${!darkMode ? 'bg-white' : 'bg-[#1E293B] text-white'} rounded-xl shadow-md pb-8 pt-4`}>
                 <div className="mt-1 w-full h-11 flex justify-between pr-4">
                   <div className="h-full w-fit flex ">
                     <div className="text-gray-400 text-sm flex items-center justify-center h-full w-24">
                       Showing
                     </div>
-                    <div className="text-black text-base flex items-center justify-center w-16 border rounded-xl px-2">
+                    <div className={`${!darkMode ? 'text-black bg-white' : 'text-white bg-[#1E293B]'} text-base flex items-center justify-center w-16 border rounded-xl px-2`}>
                       <select
-                        className="border-none w-16 outline-none pr-4 rounded-xl text-sm"
+                        className={`border-none w-16 outline-none pr-4 rounded-xl text-sm ${!darkMode ? 'bg-white' : 'bg-[#1E293B]'}`}
                         // value={limit}
                         // onChange={handleLimitChange}
                       >
@@ -136,7 +137,7 @@ const Category = () => {
                       <input
                         type="text"
                         placeholder="Search here..."
-                        className="text-gray-400 text-sm outline-none w-full "
+                        className={`${!darkMode ? 'text-gray-400 bg-white' : 'text-white bg-[#1E293B]'} text-sm outline-none w-full `}
                       ></input>
                       <span className="material-symbols-outlined w-fit cursor-pointer">
                         search
@@ -175,7 +176,7 @@ const Category = () => {
                     {categories.map((category) => (
                       <div
                         key={category._id}
-                        className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-4 py-1 hover:bg-gray-200 cursor-pointer"
+                        className={`rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-4 py-1 ${!darkMode ? 'hover:bg-gray-200 ' : 'hover:bg-gray-400'} cursor-pointer`}
                       >
                         <div
                           className="h-full w-60 font-semibold px-6 text-md flex gap-6 flex justify-start"

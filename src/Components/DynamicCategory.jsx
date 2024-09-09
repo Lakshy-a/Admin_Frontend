@@ -5,7 +5,7 @@ import Header from "./Header";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-function DynamicCategory() {
+function DynamicCategory({toggleDarkMode, darkMode}) {
   const { categoryId } = useParams(); // Destructure categoryId from useParams
   const [productsInCategory, setProductsInCategory] = useState([]);
   const [categoryName, setCategoryName] = useState("");
@@ -104,11 +104,12 @@ function DynamicCategory() {
       <div>
         <div className="app-container h-screen w-screen flex overflow-x-auto">
           <div className="sidebar h-full w-1/5">
-            <Sidebar />
+            <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
           </div>
           <div className="headerBar h-24 w-4/5 ">
             <div>
-              <Header />
+             <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
             </div>
             <div className="w-full h-fit bg-[#F2F7FB] pl-8 pr-8 pt-8 ">
               <div className="w-full h-16 ">

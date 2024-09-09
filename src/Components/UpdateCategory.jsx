@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useNavigate, useParams } from "react-router-dom";
 
-function UpdateCategory() {
+function UpdateCategory({toggleDarkMode, darkMode}) {
   const navigate = useNavigate();
   const { categoryId } = useParams();
 
@@ -111,25 +111,26 @@ function UpdateCategory() {
     <div>
       <div className="app-container h-screen w-screen flex overflow-x-auto">
         <div className="sidebar h-full w-1/5">
-          <Sidebar />
+          <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
         </div>
         <div className="headerBar h-24 w-4/5 ">
           <div>
-            <Header />
+           <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
           </div>
-          <div className="w-full h-fit bg-[#F2F7FB] pl-8 pr-8 pt-8 ">
+          <div className={`w-full h-fit ${!darkMode ? 'bg-[#F2F7FB]' : 'bg-[#0F172A]'} pl-8 pr-8 pt-8 `}>
             <div className="w-full h-16 ">
-              <h2 className="text-2xl font-bold">Update Category</h2>
+              <h2 className={`text-2xl font-bold ${!darkMode ? 'text-black' : 'text-white'}`}>Update Category</h2>
             </div>
             <div className="gap-4">
               {/* product details */}
-              <div className="w-full h-fit bg-white rounded-xl shadow-md p-8">
+              <div className={`w-full h-fit ${!darkMode ? 'bg-white' : 'bg-[#1E293B]'} rounded-xl shadow-md p-8`}>
                 <form className="space-y-4" >
                   <div>
                     <div className="flex ">
                       <label
                         htmlFor="name"
-                        className="block text-sm font-medium text-gray-700 w-2/5"
+                        className={`block text-sm font-medium ${!darkMode ? 'text-gray-700' : 'text-white'} w-2/5`}
                       >
                         Category Name{" "}
                         <span className="text-red-600 text-md">*</span>
@@ -140,14 +141,14 @@ function UpdateCategory() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500  sm:text-sm ${!darkMode ? 'focus:border-indigo-500 bg-white' : 'focus:border-blue-500 bg-[#0F172A] text-white'}`}
                         required
                       />
                     </div>
                   </div>
                   {/* product image */}
-                  <div className="imageUploader w-full h-fit bg-white rounded-xl shadow-md pb-8 flex">
-                    <div className="text-sm font-medium text-gray-700 w-2/5 flex mt-8">
+                  <div className={`imageUploader w-full h-fit ${!darkMode ? 'bg-white' : 'bg-[#1E293B]'} rounded-xl shadow-md pb-8 flex`}>
+                    <div className={`text-sm font-medium ${!darkMode ? 'text-gray-700' : 'text-white'} w-2/5 flex mt-8`}>
                       Category Image{" "}
                       <span className="text-red-600 text-md">*</span>
                     </div>

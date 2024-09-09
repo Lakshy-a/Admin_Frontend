@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const AllProducts = () => {
+const AllProducts = ({toggleDarkMode, darkMode}) => {
   const navigate = useNavigate();
 
   const handleAddNew = () => {
@@ -102,15 +102,16 @@ const AllProducts = () => {
     <div className="app-container h-screen w-screen flex overflow-x-auto">
       {/* sidebar */}
       <div className="sidebar h-fit  w-1/5 ">
-        <Sidebar />
+        <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
       </div>
       <div className="headerBar h-24 w-4/5 ">
-        <Header />
-        <div className="w-full h-fit bg-[#F2F7FB] pl-8 pr-8 pt-8 ">
+       <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
+        <div className={`w-full h-fit ${!darkMode ? 'bg-[#F2F7FB] text-black' : 'bg-[#0F172A] text-white'} pl-8 pr-8 pt-8`}>
           <div className="w-full h-16 ">
             <h2 className="text-2xl font-bold">Product List</h2>
           </div>
-          <div className="w-full h-fit bg-white rounded-xl shadow-md pb-8">
+          <div className={`w-full h-fit ${!darkMode ? 'bg-white' : 'bg-[#1E293B]'} rounded-xl shadow-md pb-8`}>
             <div className="w-full h-10 flex items-center pl-4 gap-1">
               <span className="material-symbols-outlined text-lg">taunt</span>
               <div className="text-gray-400	text-sm">
@@ -123,10 +124,10 @@ const AllProducts = () => {
                 <div className="text-gray-400	text-sm flex items-center justify-center h-full w-24">
                   Showing
                 </div>
-                <div className="text-black text-base flex items-center justify-center w-16 border rounded-xl px-2">
+                <div className={`${!darkMode ? 'text-black bg-white ' : 'text-white bg-[#1E293B]'} text-base flex items-center justify-center w-16 border rounded-xl px-2`}>
                   {" "}
                   <select 
-                    className="border-none w-16 outline-none pr-4 rounded-xl text-sm"
+                    className={`border-none w-16 outline-none pr-4 rounded-xl text-sm ${!darkMode ? 'bg-white' : 'bg-[#1E293B]'}`}
                     value={limit}
                     onChange={handleLimitChange}
                   >
@@ -142,7 +143,7 @@ const AllProducts = () => {
                   <input
                     type="text"
                     placeholder="Search here..."
-                    className="text-gray-400	text-sm outline-none w-full "
+                    className={`${!darkMode ? 'bg-white text-black' : 'bg-[#1E293B] text-white'}	text-sm outline-none w-full `}
                   ></input>
                   <span className="material-symbols-outlined w-fit cursor-pointer">
                     search
@@ -180,7 +181,7 @@ const AllProducts = () => {
                 {products.map((product) => (
                   <div
                     key={product._id}
-                    className="rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-3 py-1 hover:bg-gray-200 cursor-pointer" 
+                    className={`rounded-xl w-fit h-fit flex justify-between items-center gap-8 mb-3 py-1 ${!darkMode ? 'hover:bg-gray-200' : 'hover:bg-gray-400 hover:text-black'} cursor-pointer`} 
                   >
                     <div className="h-full w-72 font-semibold px-6 text-md flex gap-4" onClick={openProductPage} data-id={product._id}>
                       <img
@@ -226,11 +227,11 @@ const AllProducts = () => {
                   disabled={page === 1}
                   className="mr-2 ml-4 cursor-pointer text-white rounded font-semibold "
                 >
-                  <span className="text-2xl text-black hover:text-white h-10 w-10 rounded-full hover:bg-[#3482FD]  flex items-center justify-center material-symbols-outlined font-bold	material-symbols-outlined">
+                  <span className={`text-2xl  h-10 w-10 rounded-full hover:bg-[#3482FD]  flex items-center justify-center material-symbols-outlined font-bold	material-symbols-outlined ${!darkMode ? 'text-black hover:text-white' : 'text-white'}`}>
                     chevron_left
                   </span>
                 </button>
-                <span className="flex items-center justify-center bg-[#3482FD] text-white rounded-full h-10 w-10 font-semibold">
+                <span className={`flex items-center justify-center ${!darkMode ? 'bg-[#3482FD] text-white ' : 'bg-[#3482FD] text-white'} rounded-full h-10 w-10 font-semibold `}>
                   {page}
                 </span>
                 <button
@@ -238,7 +239,7 @@ const AllProducts = () => {
                   disabled={page === 7}
                   className="ml-2 cursor-pointer text-white rounded font-semibold	"
                 >
-                  <span className="text-black text-2xl h-10 w-10 rounded-full hover:text-white flex items-center justify-center material-symbols-outlined font-bold	hover:bg-[#3482FD]">
+                  <span className={` text-2xl h-10 w-10 rounded-full  flex items-center justify-center material-symbols-outlined font-bold	 ${!darkMode ? 'hover:bg-[#3482FD] hover:text-white text-black' : 'text-white hover:bg-[#3482FD]'}`}>
                     chevron_right
                   </span>
                 </button>

@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
 
-function AddProduct() {
+function AddProduct({toggleDarkMode, darkMode}) {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -48,13 +48,14 @@ function AddProduct() {
       <div>
         <div className="app-container h-screen w-screen flex">
           <div className="sidebar h-full w-1/5">
-            <Sidebar />
+            <Sidebar toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
           </div>
           <div className="headerBar h-24 w-4/5 ">
             <div>
-              <Header />
+             <Header toggleDarkMode={toggleDarkMode} darkMode={darkMode}/>
+
             </div>
-            <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-1">
+            <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-1 ">
               <h2 className="text-2xl font-bold mb-4">Add New Product</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
