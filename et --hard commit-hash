@@ -1,0 +1,209 @@
+[33mcommit d68b3d9df3ab4872ea2cd7844d86aa341c7ee1f8[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Sep 9 17:39:56 2024 +0530
+
+    New Commit
+
+[33mcommit bc038ae5bc6900633405701a473772d821b1c65b[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Sep 4 18:24:40 2024 +0530
+
+    Designed the product page
+
+[33mcommit 2a2ca2a68fa53dd089f4c4576047a709d50ce019[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Sep 3 18:12:26 2024 +0530
+
+    Worked on UI
+
+[33mcommit 13f4a09e1166a624e04ab8076a315e9de08c2f1b[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Sep 2 16:44:47 2024 +0530
+
+    Updated the UI
+
+[33mcommit 5e6e886ad0903a2c288d99062d3e4b92341bc5ee[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Sep 2 10:18:24 2024 +0530
+
+    New Commit
+
+[33mcommit d5f1084890eaf4b53da5663188423cfc04cb6085[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 30 17:44:33 2024 +0530
+
+    Working on the counts of products category wise
+
+[33mcommit 0918015f5e9e6c07f59274657a13cd97bb3cf09a[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 30 11:47:24 2024 +0530
+
+    Completed fetching products category wise on frontend and backend both
+
+[33mcommit e40982ef35add9c0683c731a6697591074ff807e[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Aug 28 17:02:36 2024 +0530
+
+    Commiting before performing aggregation
+
+[33mcommit abf243c0c125e96c472932041a8345f2287f4ebe[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 27 18:15:22 2024 +0530
+
+    Added favicon image and changed the title
+
+[33mcommit 0008923b7e6f165ed39390dda4c07cee194fe4f2[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 27 17:05:25 2024 +0530
+
+    Implemented Add Category
+
+[33mcommit 87e64c5f0a484a1f9842964391297ac0c3ecc901[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 27 15:43:59 2024 +0530
+
+    Update Category Updated
+
+[33mcommit b6b88b31fcebc6fd608b29cd3b359900556f7bc8[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Aug 12 15:13:23 2024 +0530
+
+    Styling the category page
+
+[33mcommit 746551ab8f58642fb1c4f659bce5e81bc4b0cd40[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Aug 12 14:16:53 2024 +0530
+
+    Updated product implemented successfully
+
+[33mcommit 9264938bf9826149f9b9d5af7dfc84ef48735b0b[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Aug 12 12:27:53 2024 +0530
+
+    Delete button working fine working on update button
+
+[33mcommit 75a542443489120ff0e71cce9fa96d5ed6409116[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 9 17:32:47 2024 +0530
+
+    Completed the add new product
+
+[33mcommit 4f3f202794b6b255e85616dab4af3da3b10784e6[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Thu Aug 8 18:19:39 2024 +0530
+
+    New Page for adding products
+
+[33mcommit 81695e0e7e28e3c2d50455b933f327237e6c5886[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Thu Aug 8 17:00:56 2024 +0530
+
+    Designed the product list page
+
+[33mcommit 2271dd6298b8dbe737e5239df105e0909278094e[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Aug 7 18:17:21 2024 +0530
+
+    Implementing drawer functionality
+
+[33mcommit e567e130db69ec5caf9e2119387c0d2e3c8d5616[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Aug 7 17:47:38 2024 +0530
+
+    Latest Commit
+
+[33mcommit b85ce36ea8bef17cf5546fbcf5e2d190f4ddd918[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Aug 7 15:55:01 2024 +0530
+
+    Added the products to different categories at frontend
+
+[33mcommit 9656032c57c20c002d80b74a45134c19173246b5[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 6 18:28:04 2024 +0530
+
+    Corrected the manage product routes at frontend
+
+[33mcommit 9d0631d1ce55f699cb0fd046764a26df3642661c[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 6 17:44:02 2024 +0530
+
+    Added categories to admin panel
+
+[33mcommit e6e730af661b7ef93dc028d0fafbc3da4658ace1[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Aug 6 16:01:45 2024 +0530
+
+    Showing the categories
+
+[33mcommit 29846f08935c5af3086899dbb3f4f8ad492fd47a[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Aug 5 16:18:30 2024 +0530
+
+    DEfined roles in schemas, all products on admin panel, all user details in admin panel
+
+[33mcommit 0c7a7df6822e6e4e030294246500d8575e4d88b2[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 2 17:16:54 2024 +0530
+
+    Commiting after implementing the update product feature
+
+[33mcommit ca01175941faa48fd26a38a8576f9b20ff579402[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 2 15:57:15 2024 +0530
+
+    Implemented remove product for frontend and backend also implemented update product on backend
+
+[33mcommit 96f65edb37d97c36b6e30c3fc801d22785e2b05e[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 2 14:41:13 2024 +0530
+
+    Commiting after adding the addProduct functionality to both backend and frontend
+
+[33mcommit ded6f1db6989ee70a574b1871915c8a9327e5a2f[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Fri Aug 2 12:20:26 2024 +0530
+
+    Commiting after improving the folder structure
+
+[33mcommit bf395ae8d56a3f0b57d1c438423f70497f9b719c[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Thu Aug 1 17:57:04 2024 +0530
+
+    Committing after adding different routes
+
+[33mcommit bd871494cf723cc8e79c2e32eea435080e06bdf5[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Jul 30 18:24:20 2024 +0530
+
+    Commiting After Linking Pages
+
+[33mcommit 86a92ca5ee01f9a16fec936ca0a3207e10e47bb9[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Tue Jul 30 17:29:00 2024 +0530
+
+    Commiting After Successfully Logged In
+
+[33mcommit 5892e12eec6362a89bcd9eded19b886ee79121ca[m
+Author: Lakshya Gupta <lakshyagupta8786@gmail.com>
+Date:   Mon Jul 29 22:55:27 2024 +0530
+
+    Commiting After Connection
+
+[33mcommit a2a3f2b592972424971fa745fda2a62529aed3e7[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Jul 24 17:01:18 2024 +0530
+
+    First Commit
+
+[33mcommit a0cb900e03ce82bee4a4793d9e51879bbf94cfb9[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Jul 24 16:43:14 2024 +0530
+
+    Commited after using formik and Yup
+
+[33mcommit f6e51b673ae0b913413bfbf1927e5d9eedf93230[m
+Author: Lakshya_Gupta <lakshyagupta8786@gmail.com>
+Date:   Wed Jul 24 12:44:35 2024 +0530
+
+    commiting after adding the form validation using formik (YUP)
